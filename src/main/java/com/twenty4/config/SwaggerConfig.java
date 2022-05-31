@@ -25,7 +25,8 @@ public class SwaggerConfig {
                         "This is a REST API documentation").version("1.0"))
                 .addSecurityItem(
                         new SecurityRequirement().addList("bearer-jwt", Arrays.asList("read", "write")))
-                .addServersItem(new Server().url("http://localhost:8080"));
+                .addServersItem(new Server().url("http://localhost:8080"))
+                .addServersItem(new Server().url("http://twnety4-env.eba-p4wyqnqj.us-east-1.elasticbeanstalk.com"));
     }
 
 }
