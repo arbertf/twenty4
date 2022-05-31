@@ -65,12 +65,14 @@ public class JwtSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(
                         "/" + baseUrl + "/auth/**",
+                        "/" + baseUrl + "/user/hello",
                         "/v3/api-docs/**",
                         "/swagger-resources/**",
                         "/configuration/**",
                         "/swagger-ui/**",
                         "/swagger-ui.html"
                 ).permitAll()
+                .antMatchers("/api/v3/api-docs/**", "/api/swagger-ui/**", "/api/swagger-ui.html").permitAll()
                 .anyRequest().authenticated();
 
         http.addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
