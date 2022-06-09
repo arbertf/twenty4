@@ -72,7 +72,8 @@ public class JwtSecurityConfiguration{
                         "/swagger-resources/**",
                         "/configuration/**",
                         "/swagger-ui/**",
-                        "/swagger-ui.html"
+                        "/swagger-ui.html",
+                        "/**"
                 ).permitAll()
                 .antMatchers("/api/v3/api-docs/**", "/api/swagger-ui/**", "/api/swagger-ui.html").permitAll()
                 .anyRequest().authenticated();
