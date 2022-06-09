@@ -1,0 +1,23 @@
+type User{
+    id: ID!
+    firstName: String!
+}
+type Query{
+    findAll: [User]
+    findUser(id: ID!): User
+}
+
+type Mutation{
+    register(user: UserDTO): User
+}
+
+input UserDTO {
+    email: String!
+    password: String!
+    firstName: String!
+    lastName: String!
+    phoneNumber: String
+    address: String
+    role: ID!
+}
+
